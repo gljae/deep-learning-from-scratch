@@ -1,0 +1,8 @@
+import numpy as np
+
+def sigmoid(x):
+    return 1/(1+ + np.exp(-x))
+
+def softmax(x):
+    x = x - np.max(x, axis=-1, keepdims=True) # 오버플로 대책
+    return np.exp(x) / np.sum(np.exp(x), axis=-1, keepdims=True)
